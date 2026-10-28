@@ -1,0 +1,11 @@
+{
+  "name": "gwa-calculator-workshop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SLU GWA Calculator — Git workflow, CI/CD, and repository-level AI agents workshop",
+  "scripts": {
+    "check": "node --check public/gwaCalculator.js && node --check public/app.js",
+    "test": "node --test tests/"
+  }
+}

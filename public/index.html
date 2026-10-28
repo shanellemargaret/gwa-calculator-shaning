@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College GWA Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>College GWA Calculator</h1>
+    <p class="subtitle">Semester &amp; Cumulative General Weighted Average</p>
+  </header>
+
+  <main>
+    <section class="panel" id="conversion-panel">
+      <h2>Grade Conversion Reference Table</h2>
+      <table class="conversion-table">
+        <thead>
+          <tr><th>Numerical Grade</th><th>Grade Point</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>97 - 100</td><td>1.00</td></tr>
+          <tr><td>94 - 96</td><td>1.25</td></tr>
+          <tr><td>91 - 93</td><td>1.50</td></tr>
+          <tr><td>88 - 90</td><td>1.75</td></tr>
+          <tr><td>85 - 87</td><td>2.00</td></tr>
+          <tr><td>80 - 84</td><td>2.50</td></tr>
+          <tr><td>75 - 79</td><td>3.00</td></tr>
+          <tr><td>Below 75</td><td>5.00 / Failed</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="semesters-panel">
+      <div class="panel-header-row">
+        <h2>Semesters</h2>
+        <button id="add-semester-btn" class="btn btn-primary" type="button">+ Add Semester</button>
+      </div>
+      <div id="semesters-container"></div>
+    </section>
+
+    <section class="panel" id="results-panel">
+      <h2>Results</h2>
+      <div id="semester-results"></div>
+      <div class="overall-result">
+        <span class="result-label">Overall Cumulative GWA:</span>
+        <span id="overall-gwa" class="result-value">--</span>
+      </div>
+      <div class="standing-result">
+        <span class="result-label">Academic Standing:</span>
+        <span id="academic-standing" class="result-value">--</span>
+      </div>
+      <p class="notice" id="nstp-notice">
+        &#9888; NSTP courses are excluded from Dean's Lister and Latin Honors calculations.
+      </p>
+      <p id="error-box" class="error-box" hidden></p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Built for the "Git 2: Automations, Workflow, Pages, and Repository-Level AI Agents" workshop.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
