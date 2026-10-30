@@ -42,9 +42,11 @@ export function computeSemesterGwa(courses, excludeNstp = true) {
   const totalWeighted = included.reduce((sum, c) => sum + c.grade * c.units, 0);
   const totalUnits = included.reduce((sum, c) => sum + c.units, 0);
 
-  // INTENTIONAL BUG (workshop checkpoint): totalUnits can
-  // legitimately be 0 (e.g. an NSTP-only semester). This should
-  // guard and throw InvalidInputError, but it does not yet
+  if (totalUnits === 0) {
+    throw new InvalidInputError(
+      "Total units for the semester is 0. Cannot compute GWA."
+    );
+  }
   return totalWeighted / totalUnits;
 }
 
